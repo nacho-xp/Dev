@@ -1,0 +1,164 @@
+// =============================================================
+// schema.prisma — Museo Inclusivo (Olimpíada ETP 2022)
+// Base de datos: PostgreSQL (Neon)
+// ORM: Prisma
+// =============================================================
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// =============================================================
+// MUSEO
+// =============================================================
+
+model Museum {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  address     String
+  phone       String?
+  email       String?
+  website     String?
+  logoUrl     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  rooms Room[]
+  tours Tour[]
+}
+
+// =============================================================
+// SALAS / ROOMS
+// =============================================================
+
+model Room {
+  id          Int      @id @default(autoincrement())
+  museumId    Int
+  name        String
+  description String?
+  floor       Int      @default(1)
+  createdAt   DateTime @default(now())
+
+  museum   Museum    @relation(fields: [museumId], references: [id])
+  artworks Artwork[]
+  beepcons Beepcon[]
+}
+
+// =============================================================
+// OBRAS DE ARTE / ARTWORKS
+// =============================================================
+
+model Artwork {
+  id          Int      @id @default(autoincrement())
+  roomId      Int
+  title       String
+  artist      String?
+  year        String?
+  technique   String?
+  description String
+  narration   String
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  room    Room     @relation(fields: [roomId], references: [id])
+  beepcon Beepcon?
+  tours   Tour[]   @relation("ArtworkTours")
+}
+
+// =============================================================
+// BEEPCONS (Puntos Inteligentes / ESP32)
+// =============================================================
+
+model Beepcon {
+  id                 Int      @id @default(autoincrement())
+  roomId             Int
+  artworkId          Int      @unique
+  bleIdentifier      String   @unique
+  serviceUUID        String
+  characteristicUUID String
+  isActive           Boolean  @default(true)
+  createdAt          DateTime @default(now())
+
+  room    Room    @relation(fields: [roomId], references: [id])
+  artwork Artwork @relation(fields: [artworkId], references: [id])
+}
+
+// =============================================================
+// VISITAS GUIADAS / TOURS
+// =============================================================
+
+model Tour {
+  id          Int      @id @default(autoincrement())
+  museumId    Int
+  name        String
+  description String?
+  language    Language @default(ES)
+  duration    Int?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  museum       Museum        @relation(fields: [museumId], references: [id])
+  appointments Appointment[]
+  artworks     Artwork[]     @relation("ArtworkTours")
+}
+
+// =============================================================
+// USUARIOS
+// =============================================================
+
+model User {
+  id                  Int      @id @default(autoincrement())
+  name                String
+  email               String   @unique
+  phone               String?
+  hasVisualImpairment Boolean  @default(false)
+  preferredLanguage   Language @default(ES)
+  createdAt           DateTime @default(now())
+
+  appointments Appointment[]
+}
+
+// =============================================================
+// TURNOS / APPOINTMENTS
+// =============================================================
+
+model Appointment {
+  id        Int               @id @default(autoincrement())
+  userId    Int
+  tourId    Int
+  date      DateTime
+  status    AppointmentStatus @default(PENDING)
+  notes     String?
+  createdAt DateTime          @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  tour Tour @relation(fields: [tourId], references: [id])
+
+  @@unique([userId, tourId, date])
+}
+
+// =============================================================
+// ENUMS
+// =============================================================
+
+enum Language {
+  ES
+  EN
+  PT
+  FR
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
