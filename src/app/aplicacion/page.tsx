@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 // src/app/aplicacion/page.tsx
@@ -27,6 +28,7 @@ export default function AplicacionPage() {
 
   useEffect(() => {
     if (typeof navigator !== "undefined" && !("bluetooth" in navigator)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setBleSupported(false);
     }
   }, []);

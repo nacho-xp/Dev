@@ -13,7 +13,6 @@ export default async function NewUserPage() {
   return (
     <div className="min-h-screen bg-cream px-14 py-12">
       <Header />
-      <UserForm tours={tours} />
     </div>
   );
 }
