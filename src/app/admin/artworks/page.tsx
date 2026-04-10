@@ -15,11 +15,11 @@ export default async function ArtworksPage() {
   });
 
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream  xl:px-14 py-12">
       <Header />
 
       {/* Subheader con título de sección y botón agregar */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex-col xl:flex items-center justify-between mb-8">
         <div className="flex items-baseline gap-4">
           <span className="font-serif text-[13px] tracking-[0.1em] text-dorado">
             01
