@@ -2,8 +2,7 @@
 
 // src/actions/beepcon.actions.ts
 import { revalidatePath } from 'next/cache'
-import { prisma } from '@/lib/prisma'
-
+import prisma from '@/lib/prisma'
 // Lo llama el botón de alerta del visitante con deterioro visual
 export async function sendAlert(formData: FormData) {
   const userId = Number(formData.get('userId'))
