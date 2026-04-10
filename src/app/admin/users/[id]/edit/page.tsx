@@ -38,7 +38,7 @@ export default async function EditUserPage({
   return (
     <div className="min-h-screen bg-cream px-14 py-12">
       <Header />
-      <UserForm tours={tours} user={user} />
+      <UserForm  user={user} />
     </div>
   );
 }
