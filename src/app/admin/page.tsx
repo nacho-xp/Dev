@@ -31,7 +31,7 @@ const CARDS = [
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream xl:px-14 py-12">
 
       {/* Header */}
      <AdminHeader></AdminHeader>
