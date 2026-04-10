@@ -51,7 +51,7 @@ export default function ArtworkMasonryGrid({ artworks }: { artworks: Artwork[] }
         */
         <div
           className="
-            columns-2 md:columns-3 lg:columns-4
+            columns-1 md:columns-3 lg:columns-4
             gap-1
           "
         >
