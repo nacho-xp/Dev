@@ -9,7 +9,7 @@ export default async function NewArtworkPage() {
   });
 
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream xl:px-14 py-12">
       <Header />
       <ArtworkForm rooms={rooms} />
     </div>

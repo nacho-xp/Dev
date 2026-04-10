@@ -28,7 +28,7 @@ export default async function EditTourPage({
   if (!tour) notFound();
 
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream xl:px-14 py-12">
       <Header />
       <TourForm museumId={tour.museumId} artworks={artworks} tour={tour} />
     </div>

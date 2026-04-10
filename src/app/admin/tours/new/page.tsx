@@ -13,7 +13,7 @@ export default async function NewTourPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream xl:px-14 py-12">
       <Header />
       <TourForm museumId={museum?.id ?? 1} artworks={artworks} />
     </div>
