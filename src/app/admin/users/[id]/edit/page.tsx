@@ -36,7 +36,7 @@ export default async function EditUserPage({
   if (!user) notFound();
 
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream xl:px-14 py-12">
       <Header />
       <UserForm  user={user} />
     </div>

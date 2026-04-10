@@ -16,7 +16,7 @@ export default async function UsersPage() {
   });
 
   return (
-    <div className="min-h-screen bg-cream px-14 py-12">
+    <div className="min-h-screen bg-cream xl:px-14 py-12">
       <Header />
 
       <div className="flex items-center justify-between mb-8">

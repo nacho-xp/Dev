@@ -21,7 +21,7 @@ export default async function ArtworksPage() {
       <MaxWidthWrapper>
         <main className="min-h-screen bg-cream pt-18">
           {/* Header de sección */}
-          <div className="px-14 py-14 border-b border-rule">
+          <div className="xl:px-14 py-14 border-b border-rule">
             <p className="font-sans text-[10px] tracking-[0.32em] uppercase text-dorado mb-4">
               COLECCIÓN
             </p>
