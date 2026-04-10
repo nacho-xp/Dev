@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -10,6 +9,8 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["@types/web-bluetooth"],
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
