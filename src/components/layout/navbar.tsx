@@ -28,7 +28,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            href="#tours"
+            href="/#tours"
             className="font-sans text-[11px] tracking-[0.2em] uppercase text-ink-mid hover:text-dorado transition-colors"
           >
             Visitas
@@ -36,7 +36,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            href="#inscripcion"
+            href="/#inscripcion"
             className="font-sans text-[11px] tracking-[0.2em] uppercase text-ink-mid hover:text-dorado transition-colors"
           >
             Reservar
@@ -52,10 +52,10 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            href="#inscripcion"
+            href="/aplicacion"
             className="font-sans text-[11px] tracking-[0.2em] uppercase text-dorado hover:text-dorado-lt transition-colors"
           >
-            Accesibilidad
+            Aplicación
           </Link>
         </li>
       </ul>
