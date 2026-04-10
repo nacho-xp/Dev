@@ -36,7 +36,7 @@ const TOURS = [
 
 export default function ToursSection() {
   return (
-    <section id="tours" className="px-14 py-15 mt-15 bg-dorado/5">
+    <section id="tours" className=" px-2 xl:px-14 py-15 mt-15 bg-dorado/5">
 
       {/* Header */}
       <div className="flex items-baseline gap-6 mb-18">

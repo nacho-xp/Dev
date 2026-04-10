@@ -9,7 +9,7 @@ export default function HeroSection() {
       <section
         className="
         flex flex-col justify-center
-        min-h-dvh px-26 py-20
+        min-h-dvh px-2 xl:px-26 py-20
         relative
         lg:after:absolute lg:after:right-0 lg:after:top-[15%] lg:after:bottom-[15%]
         lg:after:w-px lg:after:bg-linear-to-b

@@ -5,7 +5,7 @@ export default function InscripcionSection() {
   return (
     <section
       id="inscripcion"
-      className="bg-cream px-14 py-[120px] grid grid-cols-1 lg:grid-cols-2 gap-20 items-start"
+      className="bg-cream px-2 xl:px-14 py-[120px] grid grid-cols-1 lg:grid-cols-2 gap-20 items-start"
     >
 
       {/* ── Columna izquierda: formulario ── */}

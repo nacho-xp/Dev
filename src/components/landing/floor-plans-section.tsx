@@ -22,7 +22,7 @@ export default function FloorPlansSection() {
   const [zoomed, setZoomed] = useState(false);
 
   return (
-    <section id="planos" className="bg-cream px-14 py-[120px]">
+    <section id="planos" className="bg-crea px-2 xl:px-14 py-[120px]">
 
       {/* Header */}
       <div className="flex items-baseline gap-6 mb-[72px]">
