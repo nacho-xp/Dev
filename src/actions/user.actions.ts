@@ -3,8 +3,7 @@
 // src/actions/user.actions.ts
 import { revalidatePath } from "next/cache";
 import prisma from "@/lib/prisma";
-import { Language } from "@prisma/client";
-
+import { Language } from "@/generated/prisma/enums";
 export async function createUser(formData: FormData) {
   const name                = formData.get("name") as string;
   const email               = formData.get("email") as string;
